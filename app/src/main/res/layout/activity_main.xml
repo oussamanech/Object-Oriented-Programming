@@ -4,44 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/gray"
     tools:context=".MainActivity">
 
-    <TextView
+    <ImageView
+        android:id="@+id/imageView2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:layout_marginTop="50sp"
-        />
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="-2dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/androidparty" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150sp"
-        android:text="Hello Oussama!"
+        android:fontFamily="sans-serif-light"
+        android:text="From Me"
+        android:paddingLeft="20dp"
+        android:paddingTop="20dp"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:text="Hello Oussama!"
+        android:paddingBottom="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold" />
 
 
-
-        <TextView
-            android:text="Guest List"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="24sp"
-            />
-
-        <TextView
-            android:text="Kunal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="24sp"/>
 
 
 </RelativeLayout>
