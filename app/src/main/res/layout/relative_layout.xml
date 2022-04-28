@@ -1,26 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondMainActivity">
+    android:background="@color/gray"
+    android:padding="10dp">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/text1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="false"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="false"
+        android:layout_marginStart="1"
+        android:layout_marginTop="1"
+        android:layout_marginEnd="1"
+        android:layout_marginBottom="1"
+        android:background="@color/purple_700"
+        android:padding="20dp"
+        android:text="I’m in this corner"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/text1"
+        android:text="Hi its Me"
+        android:background="@color/teal_700"
+        android:layout_margin="10dp"
+        />
+
+
+
+    <TextView
+        android:text="Wait, I’m here"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
         android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="112dp"
-        android:layout_marginBottom="584dp"
-        android:background="@color/gray"
-        android:text="RelativeLayout"
-        android:textSize="25dp" />
+        android:layout_alignParentRight="true"
+        android:background="@color/purple_200"
+        android:padding="25dp"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:layout_margin="1dp"/>
+
 
 
 </RelativeLayout>
