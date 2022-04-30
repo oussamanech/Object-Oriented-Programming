@@ -15,7 +15,9 @@ import java.text.NumberFormat;
 public class MainActivity extends AppCompatActivity {
     private TextView quantityTextView  ;
     private TextView priceTextView ;
+    private TextView detailPriceTextView ;
     private EditText pricePerOne;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,13 +32,12 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
         quantityTextView = findViewById(R.id.quantity_text_view);
-        //priceTextView = findViewById(R.id.price_text_view);
         pricePerOne = findViewById(R.id.price_per_one_edit_text);
 
         int pricePerOneInt = Integer.parseInt(pricePerOne.getText().toString());
         int quantity = Integer.parseInt(quantityTextView.getText().toString());
-        display( quantity );
 
+        display( quantity );
         displayPrice(pricePerOneInt * quantity);
     }
 
@@ -52,7 +53,19 @@ public class MainActivity extends AppCompatActivity {
      */
     private void displayPrice(int number) {
         priceTextView = findViewById(R.id.price_text_view);
+        detailPriceTextView = findViewById(R.id.detail_price_text_view);
+
+        quantityTextView = findViewById(R.id.quantity_text_view);
+        pricePerOne = findViewById(R.id.price_per_one_edit_text);
+        int pricePerOneInt = Integer.parseInt(pricePerOne.getText().toString());
+        int quantity = Integer.parseInt(quantityTextView.getText().toString());
+
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+        detailPriceTextView.setText("(Number Coffee : "+quantity+" ,by Price "+pricePerOneInt+" for one coffee )" );
+
+        quantityTextView = findViewById(R.id.quantity_text_view);
+        quantityTextView.setText("" + 1);
+
     }
 
 
@@ -60,13 +73,13 @@ public class MainActivity extends AppCompatActivity {
     public void increment(View view) {
         quantityTextView = findViewById(R.id.quantity_text_view);
         int quantity = Integer.parseInt(quantityTextView.getText().toString());
-        quantityTextView.setText("" + (quantity + 1) );
+        display(quantity + 1);
     }
 
     public void decrement(View view) {
         quantityTextView = findViewById(R.id.quantity_text_view);
         int quantity = Integer.parseInt(quantityTextView.getText().toString());
         if(quantity>0)
-        quantityTextView.setText("" + (quantity - 1) );
+            display(quantity - 1);
     }
 }
