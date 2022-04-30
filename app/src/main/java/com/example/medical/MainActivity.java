@@ -60,8 +60,9 @@ public class MainActivity extends AppCompatActivity {
         int pricePerOneInt = Integer.parseInt(pricePerOne.getText().toString());
         int quantity = Integer.parseInt(quantityTextView.getText().toString());
 
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
-        detailPriceTextView.setText("(Number Coffee : "+quantity+" ,by Price "+pricePerOneInt+" for one coffee )" );
+        priceTextView.setText("Amount Due  $" + number +
+                        ""+ "\n \n(Toal Item Count "+quantity+" Coffees, by Price "+pricePerOneInt+"$ for one item )" );
+        detailPriceTextView.setText(" Thank You!" );
 
         quantityTextView = findViewById(R.id.quantity_text_view);
         quantityTextView.setText("" + 1);
@@ -69,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    
+
     public void increment(View view) {
         quantityTextView = findViewById(R.id.quantity_text_view);
         int quantity = Integer.parseInt(quantityTextView.getText().toString());
