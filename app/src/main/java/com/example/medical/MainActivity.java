@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 "\nAdd Chocolate ? " + isChekChocolate +
                 "\nQuantity : " + quantity +
                 "\nTotal : $ " + totals +
-                "\nThank You!";
+                "\n"+getString(R.string.thank_you) +"";
 
 
        return show;
@@ -140,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
         intent.setData(Uri.parse("mailto:"));
         intent.putExtra(Intent.EXTRA_EMAIL, "oussnech@gmail.com");
         intent.putExtra(Intent.EXTRA_SUBJECT, "Buy Coffee");
-        intent.putExtra(Intent.EXTRA_STREAM, "displayPrice()");
+        intent.putExtra(Intent.EXTRA_TEXT, displayPrice());
 //        if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
 //        }

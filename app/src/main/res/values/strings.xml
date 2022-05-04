@@ -2,4 +2,8 @@
     <string name="app_name">Buy Coffee</string>
     <string name="wait_i_m_here">Wait, I’m here</string>
     <string name="send">Send</string>
+    <string name="TOPPINGS">TOPPINGS</string>
+    <string name="Whippedcream">Whipped cream</string>
+    <string name="Chocolate">Chocolate</string>
+    <string name="thank_you">Thank you!</string>
 </resources>

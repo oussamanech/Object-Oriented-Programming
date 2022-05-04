@@ -19,19 +19,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="5dp"
-            android:text="TOPPINGS" />
+            android:text="@string/TOPPINGS" />
 
         <CheckBox
             android:id="@+id/checkBoxCream"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Name"
-            android:text="Whipped cream" />
+            android:text="@string/Whippedcream" />
         <CheckBox
             android:id="@+id/checkBoxChocolate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Chocolate" />
+            android:text="@string/Chocolate" />
 
         <EditText
             android:id="@+id/editTextTextPersonName"

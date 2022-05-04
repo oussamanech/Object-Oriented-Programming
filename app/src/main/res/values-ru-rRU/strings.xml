@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Купить кофе</string>
+    <string name="wait_i_m_here">Подожди, я здесь</string>
+    <string name="send">Отправлять</string>
+    <string name="TOPPINGS">НАЧИНКИ</string>
+    <string name="Whippedcream">Взбитые сливки</string>
+    <string name="Chocolate">Шоколад</string>
+    <string name="thank_you">Спасибо!</string>
+</resources>
