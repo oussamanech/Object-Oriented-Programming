@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView priceTextView ;
     private TextView detailPriceTextView ;
     private EditText pricePerOne;
+    private EditText namePersone;
 
 
     @Override
@@ -54,11 +55,13 @@ public class MainActivity extends AppCompatActivity {
     private void displayPrice(int number) {
         priceTextView = findViewById(R.id.price_text_view);
         detailPriceTextView = findViewById(R.id.detail_price_text_view);
+        namePersone = findViewById(R.id.editTextTextPersonName);
 
         quantityTextView = findViewById(R.id.quantity_text_view);
         pricePerOne = findViewById(R.id.price_per_one_edit_text);
         int pricePerOneInt = Integer.parseInt(pricePerOne.getText().toString());
         int quantity = Integer.parseInt(quantityTextView.getText().toString());
+        String nameP = namePersone.getText().toString();
 
         priceTextView.setText("Amount Due  $" + number +
                         ""+ "\n \n(Toal Item Count "+quantity+" Coffees, by Price "+pricePerOneInt+"$ for one item )" );
