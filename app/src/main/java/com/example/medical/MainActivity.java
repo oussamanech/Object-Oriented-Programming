@@ -2,6 +2,8 @@ package com.example.medical;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -42,7 +44,13 @@ public class MainActivity extends AppCompatActivity {
         int quantity = Integer.parseInt(quantityTextView.getText().toString());
 
         display( quantity );
-        displayPrice(pricePerOneInt * quantity);
+        String show = displayPrice();
+
+        priceTextView = findViewById(R.id.price_text_view);
+        priceTextView.setText(show) ;
+
+        detailPriceTextView = findViewById(R.id.detail_price_text_view);
+        detailPriceTextView.setText(" Welcome Again!" );
     }
 
     /**
@@ -55,9 +63,9 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method displays the given price on the screen.
      */
-    private void displayPrice(int total) {
-        priceTextView = findViewById(R.id.price_text_view);
-        detailPriceTextView = findViewById(R.id.detail_price_text_view);
+    private String displayPrice() {
+
+
         namePersone = findViewById(R.id.editTextTextPersonName);
         isCheckCream = findViewById(R.id.checkBoxCream);
         isCheckChocolate = findViewById(R.id.checkBoxChocolate);
@@ -70,24 +78,17 @@ public class MainActivity extends AppCompatActivity {
         boolean isChekCream = isCheckCream.isChecked();
         boolean isChekChocolate = isCheckChocolate.isChecked();
 
-        if(isChekCream)
-            pricePerOneInt = pricePerOneInt + 1;
-        if(isChekChocolate)
-            pricePerOneInt = pricePerOneInt + 2;
-
         int totals = calculatePrice(pricePerOneInt,quantity,isChekCream,isChekChocolate);
 
-        priceTextView.setText("Name : " +nameP +
+        String show = "Name : " +nameP +
                 "\nAdd Whipped cream ? " + isChekCream +
                 "\nAdd Chocolate ? " + isChekChocolate +
-                "\nQuantity : " + quantity +" , by Price "+pricePerOneInt+"$"+
+                "\nQuantity : " + quantity +
                 "\nTotal : $ " + totals +
-                "\nThank You!") ;
+                "\nThank You!";
 
-        detailPriceTextView.setText(" Welcome Again!" );
 
-        quantityTextView = findViewById(R.id.quantity_text_view);
-        quantityTextView.setText("" + 1);
+       return show;
 
     }
 
@@ -95,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         if(addCream)
             price = price + 1;
         if(addCream)
-            price = price + 2;
+            price = price + 1;
 
         return price*qunt;
     }
@@ -124,5 +125,24 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this,"You cannot have less than 1 coffee", Toast.LENGTH_LONG).show();
             return;
         }
+    }
+
+    public void openMap(View view) {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("geo:0,0?q=Выставочная ул., 14, Краснодар, Краснодарский край, 350042"));
+        startActivity(intent);
+
+    }
+
+    public void sendEmail(View view) {
+
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:"));
+        intent.putExtra(Intent.EXTRA_EMAIL, "oussnech@gmail.com");
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Buy Coffee");
+        intent.putExtra(Intent.EXTRA_STREAM, "displayPrice()");
+//        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+//        }
     }
 }
