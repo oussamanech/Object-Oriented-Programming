@@ -19,6 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="5dp"
+            style="@style/CustomText"
             android:text="@string/TOPPINGS" />
 
         <CheckBox
@@ -46,6 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
+            style="@style/CustomText"
             android:text="Quantity"
             android:textAllCaps="true" />
 
@@ -87,6 +89,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Price per one ( $ )"
+            style="@style/CustomText"
             android:textAllCaps="true" />
 
         <EditText
