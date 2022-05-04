@@ -70,11 +70,18 @@ public class MainActivity extends AppCompatActivity {
         boolean isChekCream = isCheckCream.isChecked();
         boolean isChekChocolate = isCheckChocolate.isChecked();
 
+        if(isChekCream)
+            pricePerOneInt = pricePerOneInt + 1;
+        if(isChekChocolate)
+            pricePerOneInt = pricePerOneInt + 2;
+
+        int totals = calculatePrice(pricePerOneInt,quantity,isChekCream,isChekChocolate);
+
         priceTextView.setText("Name : " +nameP +
                 "\nAdd Whipped cream ? " + isChekCream +
                 "\nAdd Chocolate ? " + isChekChocolate +
                 "\nQuantity : " + quantity +" , by Price "+pricePerOneInt+"$"+
-                "\nTotal : $ " + total +
+                "\nTotal : $ " + totals +
                 "\nThank You!") ;
 
         detailPriceTextView.setText(" Welcome Again!" );
@@ -84,18 +91,38 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private int calculatePrice(int price,int qunt,boolean addCream,boolean addChocolate){
+        if(addCream)
+            price = price + 1;
+        if(addCream)
+            price = price + 2;
 
+        return price*qunt;
+    }
 
     public void increment(View view) {
         quantityTextView = findViewById(R.id.quantity_text_view);
         int quantity = Integer.parseInt(quantityTextView.getText().toString());
-        display(quantity + 1);
+        if(quantity!= 100){
+            display(quantity +1);
+        }
+        else{
+            Toast.makeText(this,"You cannot have more than 1 coffees", Toast.LENGTH_LONG).show();
+            return;
+        }
+
     }
 
     public void decrement(View view) {
         quantityTextView = findViewById(R.id.quantity_text_view);
         int quantity = Integer.parseInt(quantityTextView.getText().toString());
-        if(quantity>0)
+
+        if(quantity!= 1){
             display(quantity - 1);
+        }
+        else{
+            Toast.makeText(this,"You cannot have less than 1 coffee", Toast.LENGTH_LONG).show();
+            return;
+        }
     }
 }

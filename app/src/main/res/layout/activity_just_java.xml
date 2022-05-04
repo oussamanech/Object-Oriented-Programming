@@ -5,12 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gray"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/gray"
         android:orientation="vertical"
         android:padding="10dp">
 
@@ -25,6 +25,7 @@
             android:id="@+id/checkBoxCream"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Name"
             android:text="Whipped cream" />
         <CheckBox
             android:id="@+id/checkBoxChocolate"
@@ -37,8 +38,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Oussama " />
+            android:hint="Name "
+            android:inputType="textPersonName" />
 
         <TextView
             android:layout_width="wrap_content"
