@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView detailPriceTextView ;
     private EditText pricePerOne;
     private EditText namePersone;
+    private CheckBox isCheckCream;
+    private CheckBox isCheckChocolate;
 
 
     @Override
@@ -56,14 +59,20 @@ public class MainActivity extends AppCompatActivity {
         priceTextView = findViewById(R.id.price_text_view);
         detailPriceTextView = findViewById(R.id.detail_price_text_view);
         namePersone = findViewById(R.id.editTextTextPersonName);
+        isCheckCream = findViewById(R.id.checkBoxCream);
+        isCheckChocolate = findViewById(R.id.checkBoxChocolate);
 
         quantityTextView = findViewById(R.id.quantity_text_view);
         pricePerOne = findViewById(R.id.price_per_one_edit_text);
         int pricePerOneInt = Integer.parseInt(pricePerOne.getText().toString());
         int quantity = Integer.parseInt(quantityTextView.getText().toString());
         String nameP = namePersone.getText().toString();
+        boolean isChekCream = isCheckCream.isChecked();
+        boolean isChekChocolate = isCheckChocolate.isChecked();
 
         priceTextView.setText("Name : " +nameP +
+                "\nAdd Whipped cream ? " + isChekCream +
+                "\nAdd Chocolate ? " + isChekChocolate +
                 "\nQuantity : " + quantity +" , by Price "+pricePerOneInt+"$"+
                 "\nTotal : $ " + total +
                 "\nThank You!") ;
