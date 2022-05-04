@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method displays the given price on the screen.
      */
-    private void displayPrice(int number) {
+    private void displayPrice(int total) {
         priceTextView = findViewById(R.id.price_text_view);
         detailPriceTextView = findViewById(R.id.detail_price_text_view);
         namePersone = findViewById(R.id.editTextTextPersonName);
@@ -63,9 +63,12 @@ public class MainActivity extends AppCompatActivity {
         int quantity = Integer.parseInt(quantityTextView.getText().toString());
         String nameP = namePersone.getText().toString();
 
-        priceTextView.setText("Amount Due  $" + number +
-                        ""+ "\n \n(Toal Item Count "+quantity+" Coffees, by Price "+pricePerOneInt+"$ for one item )" );
-        detailPriceTextView.setText(" Thank You!" );
+        priceTextView.setText("Name : " +nameP +
+                "\nQuantity : " + quantity +" , by Price "+pricePerOneInt+"$"+
+                "\nTotal : $ " + total +
+                "\nThank You!") ;
+
+        detailPriceTextView.setText(" Welcome Again!" );
 
         quantityTextView = findViewById(R.id.quantity_text_view);
         quantityTextView.setText("" + 1);
