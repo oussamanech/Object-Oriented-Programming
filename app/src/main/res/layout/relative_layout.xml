@@ -10,7 +10,10 @@
         android:id="@+id/text1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:background="@color/purple_700"
         android:padding="20dp"
         android:text="I’m in this corner"
@@ -19,11 +22,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:layout_toRightOf="@+id/text1"
-        android:text="Hi its Me"
         android:background="@color/teal_700"
-        android:layout_margin="10dp"
-        />
+        android:text="Hi its Me" />
 
 
 
@@ -39,6 +44,14 @@
         android:textColor="@color/black"
         android:layout_margin="1dp"/>
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="241dp"
+        android:text="Centre" />
 
 
 </RelativeLayout>

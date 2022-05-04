@@ -11,4 +11,7 @@ public class SecondMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.relative_layout);
     }
+    /**
+     *
+     */
 }

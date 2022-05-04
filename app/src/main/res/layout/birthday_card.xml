@@ -21,13 +21,13 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/black"
         android:fontFamily="sans-serif-light"
-        android:text="From Me"
         android:padding="25dp"
+        android:text="Happy BirthDay"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="36sp"
-        android:background="@color/black"
         android:textStyle="bold" />
 
     <TextView
